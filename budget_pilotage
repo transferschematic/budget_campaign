@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Budget de Pilotage — Amazon Global Expansion v2</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f6f9;color:#1a1a2e;font-size:13px}
+.hdr{background:linear-gradient(135deg,#1a1a2e,#16213e 60%,#e87722);color:#fff;padding:26px 32px 18px;display:flex;align-items:center;justify-content:space-between}
+.hdr h1{font-size:19px;font-weight:700}.hdr p{font-size:11px;color:#f0a050;margin-top:3px}
+.logo{font-size:28px;font-weight:900;color:#fff}.logo span{color:#e87722}
+.mb{background:#fff;border-bottom:3px solid #e87722;display:flex;flex-wrap:wrap}
+.mi{padding:9px 16px;border-right:1px solid #eee;flex:1;min-width:130px}
+.mi .l{font-size:9px;text-transform:uppercase;color:#888;letter-spacing:.6px}
+.mi .v{font-size:13px;font-weight:700;color:#1a1a2e;margin-top:1px}
+.mi .v.o{color:#e87722}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:11px;margin:18px}
+.card{background:#fff;border-radius:6px;padding:14px 16px;box-shadow:0 2px 5px rgba(0,0,0,.07);border-top:4px solid #e87722}
+.card .cl{font-size:9px;color:#888;text-transform:uppercase;letter-spacing:.5px}
+.card .cv{font-size:20px;font-weight:700;color:#1a1a2e;margin-top:3px}
+.card .cs{font-size:9px;color:#aaa;margin-top:2px}
+.sec{margin:18px 18px 0}
+.st{background:linear-gradient(90deg,#1a1a2e,#16213e);color:#fff;padding:8px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;border-radius:5px 5px 0 0;border-left:5px solid #e87722}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:0 0 5px 5px;overflow:hidden;box-shadow:0 2px 5px rgba(0,0,0,.06)}
+thead tr{background:#f0f4fa}
+thead th{padding:8px 9px;text-align:left;font-size:9px;text-transform:uppercase;color:#555;letter-spacing:.3px;border-bottom:2px solid #dde3ee;white-space:nowrap}
+th.r,td.r{text-align:right}th.c,td.c{text-align:center}
+tbody tr{border-bottom:1px solid #f0f0f0}tbody tr:hover{background:#fdf6ee}
+tbody tr.sub{background:#f0f4fa;font-weight:600}
+tbody tr.sub2{background:#e8f0fe;font-weight:600}
+tbody tr.tot{background:#1a1a2e;color:#fff;font-weight:700}
+tbody tr.tot td{padding:10px 9px}
+tbody tr.ph{background:#e87722;color:#fff;font-weight:700}
+tbody tr.ph td{padding:7px 9px;font-size:10px;letter-spacing:.4px}
+td{padding:7px 9px;vertical-align:middle}
+td.b{font-weight:700}
+.rb{display:inline-block;padding:2px 6px;border-radius:8px;font-size:9px;font-weight:600;white-space:nowrap}
+.rb1{background:#d4eaff;color:#1a5fa8}.rb2{background:#d4f5e4;color:#1a7a42}.rb3{background:#ffe5cc;color:#b35000}
+.rb4{background:#f0d4ff;color:#6a0dad}.rb5{background:#d4f0ff;color:#006a8e}
+.tag{display:inline-block;background:#f0f4fa;border:1px solid #c8d4e8;border-radius:3px;padding:0 4px;font-size:9px;margin:1px}
+.tax{display:inline-block;background:#fff3cd;border:1px solid #ffc107;border-radius:3px;padding:1px 5px;font-size:9px;color:#7a5500;font-weight:600}
+.nt{font-size:9px;color:#999;font-style:italic}
+.rh{color:#d00;font-weight:700}.rm{color:#e87722;font-weight:600}.rl{color:#28a745;font-weight:600}
+.ftr{margin:18px;padding:11px 14px;background:#f0f4fa;border-radius:5px;font-size:9px;color:#888;border-left:4px solid #e87722}
+.gap{height:18px}
+.info-box{margin:18px 18px 0;background:#fff8ec;border:1px solid #f5c842;border-left:4px solid #e87722;border-radius:5px;padding:10px 14px;font-size:10px;color:#6a4800}
+.info-box strong{color:#1a1a2e}
+.legend-row{display:flex;gap:16px;flex-wrap:wrap;padding:6px 9px;font-size:9px;background:#f9f9f9;border-top:1px dashed #ddd}
+.litem{display:flex;align-items:center;gap:5px}
+.lbox{width:12px;height:12px;border-radius:2px}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="hdr">
+  <div>
+    <h1>Budget de Pilotage de Projet</h1>
+    <p>Campagne « Amazon Global Expansion » — Agence Tona · Prestataires externes · 5 pays · 3 mois de campagne</p>
+  </div>
+  <div class="logo">amazon<span>.</span></div>
+</div>
+
+<!-- META BAR -->
+<div class="mb">
+  <div class="mi"><div class="l">Annonceur</div><div class="v">Amazon</div></div>
+  <div class="mi"><div class="l">Agence pilote</div><div class="v">Tona</div></div>
+  <div class="mi"><div class="l">Go campagne</div><div class="v">10 avr. 2026</div></div>
+  <div class="mi"><div class="l">Durée campagne</div><div class="v">3 mois</div></div>
+  <div class="mi"><div class="l">Préprod</div><div class="v">À la charge Tona</div></div>
+  <div class="mi"><div class="l">Budget global total</div><div class="v o">7 298 540 €</div></div>
+</div>
+
+<!-- INFO BOX -->
+<div class="info-box">
+  <strong>Hypothèses de calcul :</strong>
+  SEA réparti Google 70% / Bing 30% · SMA sur Facebook uniquement · Taux de change : 1 USD = 0,92 € · 1 JPY = 0,0062 € · 1 BRL = 0,175 €<br>
+  <strong>Taxes &amp; frais appliqués :</strong> Taxe Google = 2% du budget Google · Taxe SA360 = 7% du budget SEA · Frais agence Tona = 6% du budget médias global<br>
+  <strong>Hors scope :</strong> Ressources internes Amazon &amp; coûts de préprod (pris en charge par Tona)
+</div>
+
+<!-- SUMMARY CARDS -->
+<div class="cards">
+  <div class="card"><div class="cl">Budget médias net</div><div class="cv">6 500 000 €</div><div class="cs">SEA + SMA + Display × 5 pays</div></div>
+  <div class="card"><div class="cl">Taxe Google (2%)</div><div class="cv">36 400 €</div><div class="cs">Sur budget Google SEA = 1 820 000 €</div></div>
+  <div class="card"><div class="cl">Taxe SA360 (7%)</div><div class="cv">182 000 €</div><div class="cs">Sur budget SEA total = 2 600 000 €</div></div>
+  <div class="card"><div class="cl">Frais agence (6%)</div><div class="cv">390 000 €</div><div class="cs">Tona sur budget médias global</div></div>
+  <div class="card"><div class="cl">Prestataires externes</div><div class="cv">190 140 €</div><div class="cs">Ogilvy · Merkle · Mindshare · Nielsen</div></div>
+  <div class="card"><div class="cl">TOTAL GÉNÉRAL</div><div class="cv" style="color:#e87722">7 298 540 €</div><div class="cs">Toutes lignes incluses</div></div>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== SECTION 1 : BUDGETS MÉDIAS PAR CANAL ET PAR PAYS ===== -->
+<div class="sec">
+<div class="st">1 — Budgets Médias par Canal & par Pays (convertis en EUR)</div>
+<table>
+<thead>
+<tr>
+  <th>Pays</th>
+  <th class="r">Google SEA (70%)<br><span class="nt">Budget net</span></th>
+  <th class="r">Bing SEA (30%)<br><span class="nt">Budget net</span></th>
+  <th class="r">SEA Total<br><span class="nt">Net EUR</span></th>
+  <th class="r">SMA Facebook<br><span class="nt">Net EUR</span></th>
+  <th class="r">Display<br><span class="nt">Net EUR</span></th>
+  <th class="r">Total Médias<br><span class="nt">Nets EUR</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="b">🇺🇸 États-Unis</td>
+  <td class="r">257 600 €</td>
+  <td class="r">110 400 €</td>
+  <td class="r b">368 000 €</td>
+  <td class="r">276 000 €</td>
+  <td class="r">276 000 €</td>
+  <td class="r b">920 000 €</td>
+</tr>
+<tr>
+  <td class="b">🇫🇷 France</td>
+  <td class="r">168 000 €</td>
+  <td class="r">72 000 €</td>
+  <td class="r b">240 000 €</td>
+  <td class="r">180 000 €</td>
+  <td class="r">180 000 €</td>
+  <td class="r b">600 000 €</td>
+</tr>
+<tr>
+  <td class="b">🇯🇵 Japon</td>
+  <td class="r">1 215 200 €</td>
+  <td class="r">520 800 €</td>
+  <td class="r b">1 736 000 €</td>
+  <td class="r">1 302 000 €</td>
+  <td class="r">1 302 000 €</td>
+  <td class="r b">4 340 000 €</td>
+</tr>
+<tr>
+  <td class="b">🇧🇷 Brésil</td>
+  <td class="r">39 200 €</td>
+  <td class="r">16 800 €</td>
+  <td class="r b">56 000 €</td>
+  <td class="r">42 000 €</td>
+  <td class="r">42 000 €</td>
+  <td class="r b">140 000 €</td>
+</tr>
+<tr>
+  <td class="b">🇩🇪 Allemagne</td>
+  <td class="r">140 000 €</td>
+  <td class="r">60 000 €</td>
+  <td class="r b">200 000 €</td>
+  <td class="r">150 000 €</td>
+  <td class="r">150 000 €</td>
+  <td class="r b">500 000 €</td>
+</tr>
+<tr class="sub">
+  <td class="b">TOTAL GLOBAL EUR</td>
+  <td class="r">1 820 000 €</td>
+  <td class="r">780 000 €</td>
+  <td class="r b">2 600 000 €</td>
+  <td class="r b">1 950 000 €</td>
+  <td class="r b">1 950 000 €</td>
+  <td class="r b">6 500 000 €</td>
+</tr>
+</tbody>
+</table>
+<div class="legend-row">
+  <div class="litem"><span>SEA démarrage : </span><strong>Semaine 3</strong> (J+14 après lancement Display/SMA)</div>
+  <div class="litem"><span>SMA + Display démarrage : </span><strong>Jour 1</strong> (10 avril 2026)</div>
+  <div class="litem"><span>Outil SEA : </span><strong>SA360 (Search Ads 360)</strong> — Google 70% + Bing 30%</div>
+</div>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== SECTION 2 : TAXES & SURCOÛTS PLATEFORMES ===== -->
+<div class="sec">
+<div class="st">2 — Taxes Plateformes & Surcoûts Techniques (sur budget SEA)</div>
+<table>
+<thead>
+<tr>
+  <th>Pays</th>
+  <th class="r">Budget Google<br>SEA net</th>
+  <th class="r"><span class="tax">Taxe Google 2%</span><br><span class="nt">Sur budget Google</span></th>
+  <th class="r">Budget SEA<br>Total (G+B)</th>
+  <th class="r"><span class="tax">Taxe SA360 7%</span><br><span class="nt">Sur budget SEA total</span></th>
+  <th class="r">Total taxes<br>par pays</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="b">🇺🇸 États-Unis</td>
+  <td class="r">257 600 €</td>
+  <td class="r">5 152 €</td>
+  <td class="r">368 000 €</td>
+  <td class="r">25 760 €</td>
+  <td class="r b">30 912 €</td>
+</tr>
+<tr>
+  <td class="b">🇫🇷 France</td>
+  <td class="r">168 000 €</td>
+  <td class="r">3 360 €</td>
+  <td class="r">240 000 €</td>
+  <td class="r">16 800 €</td>
+  <td class="r b">20 160 €</td>
+</tr>
+<tr>
+  <td class="b">🇯🇵 Japon</td>
+  <td class="r">1 215 200 €</td>
+  <td class="r">24 304 €</td>
+  <td class="r">1 736 000 €</td>
+  <td class="r">121 520 €</td>
+  <td class="r b">145 824 €</td>
+</tr>
+<tr>
+  <td class="b">🇧🇷 Brésil</td>
+  <td class="r">39 200 €</td>
+  <td class="r">784 €</td>
+  <td class="r">56 000 €</td>
+  <td class="r">3 920 €</td>
+  <td class="r b">4 704 €</td>
+</tr>
+<tr>
+  <td class="b">🇩🇪 Allemagne</td>
+  <td class="r">140 000 €</td>
+  <td class="r">2 800 €</td>
+  <td class="r">200 000 €</td>
+  <td class="r">14 000 €</td>
+  <td class="r b">16 800 €</td>
+</tr>
+<tr class="sub">
+  <td class="b">TOTAL TAXES</td>
+  <td class="r">1 820 000 €</td>
+  <td class="r b">36 400 €</td>
+  <td class="r">2 600 000 €</td>
+  <td class="r b">182 000 €</td>
+  <td class="r b">218 400 €</td>
+</tr>
+</tbody>
+</table>
+<p class="nt" style="padding:4px 9px 0">⚠ Taxe Google déduite du budget investissable Google (2% prélevé par Google sur les dépenses). Taxe SA360 = frais de licence outil Search Ads 360 (7% sur budget SEA géré via SA360).</p>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== SECTION 3 : PRESTATAIRES EXTERNES ===== -->
+<div class="sec">
+<div class="st">3 — Prestataires Externes Tona — Honoraires de Coordination & Production</div>
+<table>
+<thead>
+<tr>
+  <th>Prestataire</th>
+  <th>Rôle & périmètre</th>
+  <th>Pays</th>
+  <th class="c">Phase 2<br><span class="nt">Planif.</span></th>
+  <th class="c">Phase 3<br><span class="nt">Production</span></th>
+  <th class="c">Phase 4<br><span class="nt">Activation (3 mois)</span></th>
+  <th class="c">Phase 5<br><span class="nt">Clôture</span></th>
+  <th class="r">Total j</th>
+  <th class="r">TJM</th>
+  <th class="r">Honoraires</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="b">Ogilvy</td>
+  <td>Création &amp; production contenus (bannières 10 formats, 3 vidéos, 30 posts social, 15 LP)</td>
+  <td><span class="tag">🇺🇸</span><span class="tag">🇫🇷</span><span class="tag">🇯🇵</span><span class="tag">🇧🇷</span><span class="tag">🇩🇪</span></td>
+  <td class="c">10</td><td class="c">30</td><td class="c">15</td><td class="c">5</td>
+  <td class="r b">60 j</td><td class="r">900 €</td><td class="r b">54 000 €</td>
+</tr>
+<tr>
+  <td class="b">Merkle</td>
+  <td>Stratégie &amp; pilotage SEA — Google Ads (70%) + Bing Ads (30%) via SA360, optimisation ROAS continue</td>
+  <td><span class="tag">🇺🇸</span><span class="tag">🇫🇷</span><span class="tag">🇯🇵</span><span class="tag">🇧🇷</span><span class="tag">🇩🇪</span></td>
+  <td class="c">8</td><td class="c">5</td><td class="c">30</td><td class="c">4</td>
+  <td class="r b">47 j</td><td class="r">850 €</td><td class="r b">39 950 €</td>
+</tr>
+<tr>
+  <td class="b">Mindshare</td>
+  <td>Achat média Display &amp; SMA — Facebook Ads uniquement (SMA), bannières display multi-réseaux</td>
+  <td><span class="tag">🇺🇸</span><span class="tag">🇫🇷</span><span class="tag">🇯🇵</span><span class="tag">🇧🇷</span><span class="tag">🇩🇪</span></td>
+  <td class="c">8</td><td class="c">6</td><td class="c">28</td><td class="c">4</td>
+  <td class="r b">46 j</td><td class="r">820 €</td><td class="r b">37 720 €</td>
+</tr>
+<tr>
+  <td class="b">Nielsen</td>
+  <td>Tracking global (pixels, UTM, conversions), attribution multicanal, Looker Studio dashboards</td>
+  <td><span class="tag">🇺🇸</span><span class="tag">🇫🇷</span><span class="tag">🇯🇵</span><span class="tag">🇧🇷</span><span class="tag">🇩🇪</span></td>
+  <td class="c">8</td><td class="c">8</td><td class="c">28</td><td class="c">6</td>
+  <td class="r b">50 j</td><td class="r">750 €</td><td class="r b">37 500 €</td>
+</tr>
+<tr class="sub">
+  <td colspan="3" class="b">SOUS-TOTAL Prestataires Externes</td>
+  <td class="c">34</td><td class="c">49</td><td class="c">101</td><td class="c">19</td>
+  <td class="r">203 j</td><td class="r">—</td><td class="r b">169 170 €</td>
+</tr>
+</tbody>
+</table>
+<p class="nt" style="padding:4px 9px 0">ℹ Phase 1 (Cadrage) &amp; préprod : prise en charge Tona — non facturée au client Amazon. La Phase 4 correspond aux 3 mois de campagne active (10 avr. → 9 juil. 2026).</p>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== SECTION 4 : FRAIS AGENCE Tona ===== -->
+<div class="sec">
+<div class="st">4 — Frais d'Agence Tona (6% du Budget Médias Global)</div>
+<table>
+<thead>
+<tr>
+  <th>Pays</th>
+  <th class="r">Budget médias net</th>
+  <th class="r">Taux frais agence</th>
+  <th class="r">Frais Tona</th>
+  <th>Périmètre inclus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="b">🇺🇸 États-Unis</td>
+  <td class="r">920 000 €</td>
+  <td class="r">6%</td>
+  <td class="r b">55 200 €</td>
+  <td>Pilotage projet, coordination agences, reporting client</td>
+</tr>
+<tr>
+  <td class="b">🇫🇷 France</td>
+  <td class="r">600 000 €</td>
+  <td class="r">6%</td>
+  <td class="r b">36 000 €</td>
+  <td>Pilotage projet, coordination agences, reporting client</td>
+</tr>
+<tr>
+  <td class="b">🇯🇵 Japon</td>
+  <td class="r">4 340 000 €</td>
+  <td class="r">6%</td>
+  <td class="r b">260 400 €</td>
+  <td>Pilotage projet, coordination agences, reporting client</td>
+</tr>
+<tr>
+  <td class="b">🇧🇷 Brésil</td>
+  <td class="r">140 000 €</td>
+  <td class="r">6%</td>
+  <td class="r b">8 400 €</td>
+  <td>Pilotage projet, coordination agences, reporting client</td>
+</tr>
+<tr>
+  <td class="b">🇩🇪 Allemagne</td>
+  <td class="r">500 000 €</td>
+  <td class="r">6%</td>
+  <td class="r b">30 000 €</td>
+  <td>Pilotage projet, coordination agences, reporting client</td>
+</tr>
+<tr class="sub">
+  <td class="b">TOTAL FRAIS Tona</td>
+  <td class="r">6 500 000 €</td>
+  <td class="r">6%</td>
+  <td class="r b">390 000 €</td>
+  <td>Inclus : gestion de projet, suivi KPIs, communication, D&I</td>
+</tr>
+</tbody>
+</table>
+<p class="nt" style="padding:4px 9px 0">ℹ Les frais d'agence couvrent le pilotage Tona pendant les 3 mois de campagne active uniquement. Les coûts de préprod (phases 1–3) sont supportés par Tona.</p>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== SECTION 5 : BUDGET COMPLET PAR PAYS ===== -->
+<div class="sec">
+<div class="st">5 — Budget Global par Pays (toutes lignes consolidées)</div>
+<table>
+<thead>
+<tr>
+  <th>Pays</th>
+  <th class="r">Médias nets</th>
+  <th class="r">Taxe Google (2%)</th>
+  <th class="r">Taxe SA360 (7%)</th>
+  <th class="r">Total taxes</th>
+  <th class="r">Frais Tona (6%)</th>
+  <th class="r">Total investissement</th>
+  <th class="r">% du total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td class="b">🇺🇸 États-Unis</td>
+  <td class="r">920 000 €</td>
+  <td class="r">5 152 €</td>
+  <td class="r">25 760 €</td>
+  <td class="r">30 912 €</td>
+  <td class="r">55 200 €</td>
+  <td class="r b">1 006 112 €</td>
+  <td class="r">13,8%</td>
+</tr>
+<tr>
+  <td class="b">🇫🇷 France</td>
+  <td class="r">600 000 €</td>
+  <td class="r">3 360 €</td>
+  <td class="r">16 800 €</td>
+  <td class="r">20 160 €</td>
+  <td class="r">36 000 €</td>
+  <td class="r b">656 160 €</td>
+  <td class="r">9,0%</td>
+</tr>
+<tr>
+  <td class="b">🇯🇵 Japon</td>
+  <td class="r">4 340 000 €</td>
+  <td class="r">24 304 €</td>
+  <td class="r">121 520 €</td>
+  <td class="r">145 824 €</td>
+  <td class="r">260 400 €</td>
+  <td class="r b">4 746 224 €</td>
+  <td class="r">65,0%</td>
+</tr>
+<tr>
+  <td class="b">🇧🇷 Brésil</td>
+  <td class="r">140 000 €</td>
+  <td class="r">784 €</td>
+  <td class="r">3 920 €</td>
+  <td class="r">4 704 €</td>
+  <td class="r">8 400 €</td>
+  <td class="r b">153 104 €</td>
+  <td class="r">2,1%</td>
+</tr>
+<tr>
+  <td class="b">🇩🇪 Allemagne</td>
+  <td class="r">500 000 €</td>
+  <td class="r">2 800 €</td>
+  <td class="r">14 000 €</td>
+  <td class="r">16 800 €</td>
+  <td class="r">30 000 €</td>
+  <td class="r b">546 800 €</td>
+  <td class="r">7,5%</td>
+</tr>
+<tr class="sub">
+  <td class="b">SOUS-TOTAL médias + taxes + frais</td>
+  <td class="r b">6 500 000 €</td>
+  <td class="r b">36 400 €</td>
+  <td class="r b">182 000 €</td>
+  <td class="r b">218 400 €</td>
+  <td class="r b">390 000 €</td>
+  <td class="r b">7 108 400 €</td>
+  <td class="r">97,4%</td>
+</tr>
+<tr>
+  <td colspan="5" class="b" style="color:#555">+ Prestataires externes (Ogilvy · Merkle · Mindshare · Nielsen)</td>
+  <td class="r">—</td>
+  <td class="r" style="color:#555">169 170 €</td>
+  <td class="r" style="color:#555">2,3%</td>
+</tr>
+<tr>
+  <td colspan="5" class="b" style="color:#555">+ Outils, licences &amp; infrastructure (hors préprod)</td>
+  <td class="r">—</td>
+  <td class="r" style="color:#555">20 970 €</td>
+  <td class="r" style="color:#555">0,3%</td>
+</tr>
+<tr class="tot">
+  <td colspan="5" class="b">TOTAL GÉNÉRAL BUDGET DE CAMPAGNE</td>
+  <td class="r">—</td>
+  <td class="r" style="color:#e87722;font-size:14px">7 298 540 €</td>
+  <td class="r">100%</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="gap"></div>
+
+<!-- ===== SECTION 6 : SYNTHÈSE FINALE ===== -->
+<div class="sec">
+<div class="st">6 — Synthèse Budgétaire Finale</div>
+<table>
+<thead><tr><th>Ligne budgétaire</th><th>Détail</th><th class="r">Montant HT</th><th class="c">% total</th></tr></thead>
+<tbody>
+<tr>
+  <td class="b">A. Budget médias nets</td>
+  <td>SEA (Google 70% + Bing 30%) + SMA Facebook + Display · 5 pays · 3 mois</td>
+  <td class="r">6 500 000 €</td>
+  <td class="c">89,1%</td>
+</tr>
+<tr style="background:#fffbe6">
+  <td class="b">B. Taxe Google (2%)</td>
+  <td>2% prélevé sur budget Google SEA (1 820 000 €) — déduit du budget investissable</td>
+  <td class="r">36 400 €</td>
+  <td class="c">0,5%</td>
+</tr>
+<tr style="background:#fffbe6">
+  <td class="b">C. Taxe SA360 (7%)</td>
+  <td>Frais licence Search Ads 360 — 7% du budget SEA total (2 600 000 €)</td>
+  <td class="r">182 000 €</td>
+  <td class="c">2,5%</td>
+</tr>
+<tr>
+  <td class="b">D. Frais agence Tona (6%)</td>
+  <td>6% du budget médias global (6 500 000 €) — pilotage, coordination, reporting</td>
+  <td class="r">390 000 €</td>
+  <td class="c">5,3%</td>
+</tr>
+<tr>
+  <td class="b">E. Prestataires externes</td>
+  <td>Ogilvy + Merkle + Mindshare + Nielsen — honoraires coordination &amp; production</td>
+  <td class="r">169 170 €</td>
+  <td class="c">2,3%</td>
+</tr>
+<tr>
+  <td class="b">F. Outils &amp; licences (campagne)</td>
+  <td>GA360, Asana, Looker Studio, Teams Premium, accessibilité D&I — hors préprod</td>
+  <td class="r">20 970 €</td>
+  <td class="c">0,3%</td>
+</tr>
+<tr style="background:#f0f4fa;font-weight:600">
+  <td colspan="2" class="b">SOUS-TOTAL hors préprod</td>
+  <td class="r">7 298 540 €</td>
+  <td class="c">100%</td>
+</tr>
+<tr class="tot">
+  <td colspan="2" class="b">TOTAL BUDGET FACTURABLE À AMAZON</td>
+  <td class="r" style="color:#e87722;font-size:15px">7 298 540 €</td>
+  <td class="c">100%</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div class="gap"></div>
+
+<!-- FOOTER -->
+<div class="ftr">
+  <strong>Document Tona — Confidentiel — RNCP39250BC03</strong> · Campagne « Amazon Global Expansion » · 5 marchés : 🇺🇸 US · 🇫🇷 FR · 🇯🇵 JP · 🇧🇷 BR · 🇩🇪 DE<br>
+  Préprod à la charge d'Tona · Campagne active : 10 avril → 9 juillet 2026 · Soutenance : 19-20 février 2026<br>
+  <span style="color:#e87722"><strong>Taux appliqués :</strong></span> 1 USD = 0,92 € · 1 JPY = 0,0062 € · 1 BRL = 0,175 € · Taxe Google 2% · Taxe SA360 7% · Frais agence 6%
+</div>
+<div style="height:18px"></div>
+</body>
+</html>
